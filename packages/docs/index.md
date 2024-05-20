@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "new-style-ui"
-  text: "new style ui 库文档"
+  text: "一个基于vue3的UI组件库"
   tagline: My great project tagline
   actions:
     - theme: brand
