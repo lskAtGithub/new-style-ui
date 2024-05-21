@@ -8,7 +8,7 @@
     "docs:dev": "pnpm --filter @new-style-ui/docs dev",
     "docs:build": "pnpm --filter @new-style-ui/docs build",
     "docs:preview": "pnpm --filter @new-style-ui/docs preview",
-    "test": "echo \"todo\""
+    "test": "pnpm --filter @new-style-ui/components test"
   },
   "keywords": [],
   "author": "",
