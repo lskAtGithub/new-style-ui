@@ -4,5 +4,3 @@
 <template>
   <ns-button>click me</ns-button>
 </template>
-
-
