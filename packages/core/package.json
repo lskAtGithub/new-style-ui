@@ -29,7 +29,8 @@
     "build-umd": "vite build --config vite.umd.config.ts",
     "build-es": "vite build --config vite.es.config.ts",
     "move-style": "move-file dist/es/index.css dist/index.css",
-    "clean": "rimraf dist"
+    "clean": "rimraf dist",
+    "release": "release-it"
   },
   "keywords": [
     "vue3",
