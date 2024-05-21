@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <ns-button></ns-button>
+  <ns-button>click me</ns-button>
 </template>
 
 
