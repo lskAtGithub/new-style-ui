@@ -9,7 +9,9 @@
     "docs:build": "pnpm --filter @new-style-ui/docs build",
     "docs:preview": "pnpm --filter @new-style-ui/docs preview",
     "test": "pnpm --filter @new-style-ui/components test",
-    "build": "pnpm --filter new-style-ui build"
+    "build:comp": "pnpm --filter new-style-ui build",
+    "build:theme": "pnpm --filter  @new-style-ui/theme build",
+    "build": "pnpm run build:theme && pnpm run build:comp"
   },
   "keywords": [],
   "author": "",
@@ -34,6 +36,7 @@
     "postcss-nested": "^6.0.1",
     "release-it": "^17.3.0",
     "rimraf": "^5.0.7",
+    "sass": "^1.77.2",
     "typescript": "5.2.2",
     "vite": "^5.1.4",
     "vitest": "^1.4.0",

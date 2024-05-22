@@ -84,15 +84,18 @@ importers:
       rimraf:
         specifier: ^5.0.7
         version: registry.npmjs.org/rimraf@5.0.7
+      sass:
+        specifier: ^1.77.2
+        version: registry.npmjs.org/sass@1.77.2
       typescript:
         specifier: 5.2.2
         version: registry.npmjs.org/typescript@5.2.2
       vite:
         specifier: ^5.1.4
-        version: registry.npmjs.org/vite@5.2.11(@types/node@20.12.12)
+        version: registry.npmjs.org/vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)
       vitest:
         specifier: ^1.4.0
-        version: registry.npmjs.org/vitest@1.6.0(@types/node@20.12.12)(jsdom@24.0.0)
+        version: registry.npmjs.org/vitest@1.6.0(@types/node@20.12.12)(jsdom@24.0.0)(sass@1.77.2)
       vue-tsc:
         specifier: ^1.8.27
         version: registry.npmjs.org/vue-tsc@1.8.27(typescript@5.2.2)
@@ -141,7 +144,7 @@ importers:
     devDependencies:
       vitepress:
         specifier: 1.0.0-rc.44
-        version: registry.npmjs.org/vitepress@1.0.0-rc.44(@algolia/client-search@4.23.3)(@types/node@20.12.12)(async-validator@4.2.5)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.2.2)
+        version: registry.npmjs.org/vitepress@1.0.0-rc.44(@algolia/client-search@4.23.3)(@types/node@20.12.12)(async-validator@4.2.5)(postcss@8.4.38)(sass@1.77.2)(search-insights@2.13.0)(typescript@5.2.2)
 
   packages/hooks: {}
 
@@ -3656,7 +3659,7 @@ packages:
       magic-string: registry.npmjs.org/magic-string@0.30.10
       ts-dedent: registry.npmjs.org/ts-dedent@2.2.0
       typescript: registry.npmjs.org/typescript@5.2.2
-      vite: registry.npmjs.org/vite@5.2.11(@types/node@20.12.12)
+      vite: registry.npmjs.org/vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)
     transitivePeerDependencies:
       - encoding
       - prettier
@@ -4180,7 +4183,7 @@ packages:
       find-package-json: registry.npmjs.org/find-package-json@1.2.0
       magic-string: registry.npmjs.org/magic-string@0.30.10
       typescript: registry.npmjs.org/typescript@5.2.2
-      vite: registry.npmjs.org/vite@5.2.11(@types/node@20.12.12)
+      vite: registry.npmjs.org/vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)
       vue-component-meta: registry.npmjs.org/vue-component-meta@2.0.19(typescript@5.2.2)
       vue-docgen-api: registry.npmjs.org/vue-docgen-api@4.78.0(vue@3.4.27)
     transitivePeerDependencies:
@@ -4278,7 +4281,7 @@ packages:
       dom-accessibility-api: registry.npmjs.org/dom-accessibility-api@0.6.3
       lodash: registry.npmjs.org/lodash@4.17.21
       redent: registry.npmjs.org/redent@3.0.0
-      vitest: registry.npmjs.org/vitest@1.6.0(@types/node@20.12.12)(jsdom@24.0.0)
+      vitest: registry.npmjs.org/vitest@1.6.0(@types/node@20.12.12)(jsdom@24.0.0)(sass@1.77.2)
     dev: true
 
   registry.npmjs.org/@testing-library/user-event@14.5.2(@testing-library/dom@9.3.4):
@@ -4590,7 +4593,7 @@ packages:
       '@babel/core': registry.npmjs.org/@babel/core@7.24.5
       '@babel/plugin-transform-typescript': registry.npmjs.org/@babel/plugin-transform-typescript@7.24.5(@babel/core@7.24.5)
       '@vue/babel-plugin-jsx': registry.npmjs.org/@vue/babel-plugin-jsx@1.2.2(@babel/core@7.24.5)
-      vite: registry.npmjs.org/vite@5.2.11(@types/node@20.12.12)
+      vite: registry.npmjs.org/vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)
       vue: registry.npmjs.org/vue@3.4.27(typescript@5.2.2)
     transitivePeerDependencies:
       - supports-color
@@ -4606,7 +4609,7 @@ packages:
       vite: ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: registry.npmjs.org/vite@5.2.11(@types/node@20.12.12)
+      vite: registry.npmjs.org/vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)
       vue: registry.npmjs.org/vue@3.4.27(typescript@5.2.2)
     dev: true
 
@@ -4631,7 +4634,7 @@ packages:
       std-env: registry.npmjs.org/std-env@3.7.0
       strip-literal: registry.npmjs.org/strip-literal@2.1.0
       test-exclude: registry.npmjs.org/test-exclude@6.0.0
-      vitest: registry.npmjs.org/vitest@1.6.0(@types/node@20.12.12)(jsdom@24.0.0)
+      vitest: registry.npmjs.org/vitest@1.6.0(@types/node@20.12.12)(jsdom@24.0.0)(sass@1.77.2)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -8146,6 +8149,12 @@ packages:
     engines: {node: '>= 4'}
     dev: true
 
+  registry.npmjs.org/immutable@4.3.6:
+    resolution: {integrity: sha512-Ju0+lEMyzMVZarkTn/gqRpdqd5dOPaz1mCZ0SH3JV6iFw81PldE/PEB1hWVEA288HPt4WXW8O7AWxB10M+03QQ==, tarball: https://registry.npmjs.org/immutable/-/immutable-4.3.6.tgz}
+    name: immutable
+    version: 4.3.6
+    dev: true
+
   registry.npmjs.org/import-fresh@3.3.0:
     resolution: {integrity: sha512-veYYhQa+D1QBKznvhUHxb8faxlrwUnxseDAbAp457E0wLNio2bOSKnjYDhMj+YiAq61xrMGhQk9iXVk5FzgQMw==, tarball: https://registry.npmjs.org/import-fresh/-/import-fresh-3.3.0.tgz}
     name: import-fresh
@@ -11649,6 +11658,18 @@ packages:
     version: 2.1.2
     dev: true
 
+  registry.npmjs.org/sass@1.77.2:
+    resolution: {integrity: sha512-eb4GZt1C3avsX3heBNlrc7I09nyT00IUuo4eFhAbeXWU2fvA7oXI53SxODVAA+zgZCk9aunAZgO+losjR3fAwA==, tarball: https://registry.npmjs.org/sass/-/sass-1.77.2.tgz}
+    name: sass
+    version: 1.77.2
+    engines: {node: '>=14.0.0'}
+    hasBin: true
+    dependencies:
+      chokidar: registry.npmjs.org/chokidar@3.6.0
+      immutable: registry.npmjs.org/immutable@4.3.6
+      source-map-js: registry.npmjs.org/source-map-js@1.2.0
+    dev: true
+
   registry.npmjs.org/saxes@6.0.0:
     resolution: {integrity: sha512-xAg7SOnEhrm5zI3puOOKyy1OMcMlIJZYNJY7xLBwSze0UjhPLnWfj2GF2EpT0jmzaJKIWKHLsaSSajf35bcYnA==, tarball: https://registry.npmjs.org/saxes/-/saxes-6.0.0.tgz}
     name: saxes
@@ -13018,7 +13039,7 @@ packages:
     engines: {node: '>= 0.8'}
     dev: true
 
-  registry.npmjs.org/vite-node@1.6.0(@types/node@20.12.12):
+  registry.npmjs.org/vite-node@1.6.0(@types/node@20.12.12)(sass@1.77.2):
     resolution: {integrity: sha512-de6HJgzC+TFzOu0NTC4RAIsyf/DY/ibWDYQUcuEA84EMHhcefTUGkjFHKKEJhQN4A+6I0u++kr3l36ZF2d7XRw==, tarball: https://registry.npmjs.org/vite-node/-/vite-node-1.6.0.tgz}
     id: registry.npmjs.org/vite-node/1.6.0
     name: vite-node
@@ -13030,7 +13051,7 @@ packages:
       debug: registry.npmjs.org/debug@4.3.4
       pathe: registry.npmjs.org/pathe@1.1.2
       picocolors: registry.npmjs.org/picocolors@1.0.1
-      vite: registry.npmjs.org/vite@5.2.11(@types/node@20.12.12)
+      vite: registry.npmjs.org/vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -13062,7 +13083,7 @@ packages:
       kolorist: registry.npmjs.org/kolorist@1.8.0
       magic-string: registry.npmjs.org/magic-string@0.30.10
       typescript: registry.npmjs.org/typescript@5.2.2
-      vite: registry.npmjs.org/vite@5.2.11(@types/node@20.12.12)
+      vite: registry.npmjs.org/vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)
       vue-tsc: registry.npmjs.org/vue-tsc@1.8.27(typescript@5.2.2)
     transitivePeerDependencies:
       - '@types/node'
@@ -13070,7 +13091,7 @@ packages:
       - supports-color
     dev: true
 
-  registry.npmjs.org/vite@5.2.11(@types/node@20.12.12):
+  registry.npmjs.org/vite@5.2.11(@types/node@20.12.12)(sass@1.77.2):
     resolution: {integrity: sha512-HndV31LWW05i1BLPMUCE1B9E9GFbOu1MbenhS58FuK6owSO5qHm7GiCotrNY1YE5rMeQSFBGmT5ZaLEjFizgiQ==, tarball: https://registry.npmjs.org/vite/-/vite-5.2.11.tgz}
     id: registry.npmjs.org/vite/5.2.11
     name: vite
@@ -13105,11 +13126,12 @@ packages:
       esbuild: registry.npmjs.org/esbuild@0.20.2
       postcss: registry.npmjs.org/postcss@8.4.38
       rollup: registry.npmjs.org/rollup@4.17.2
+      sass: registry.npmjs.org/sass@1.77.2
     optionalDependencies:
       fsevents: registry.npmjs.org/fsevents@2.3.3
     dev: true
 
-  registry.npmjs.org/vitepress@1.0.0-rc.44(@algolia/client-search@4.23.3)(@types/node@20.12.12)(async-validator@4.2.5)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.2.2):
+  registry.npmjs.org/vitepress@1.0.0-rc.44(@algolia/client-search@4.23.3)(@types/node@20.12.12)(async-validator@4.2.5)(postcss@8.4.38)(sass@1.77.2)(search-insights@2.13.0)(typescript@5.2.2):
     resolution: {integrity: sha512-tO5taxGI7fSpBK1D8zrZTyJJERlyU9nnt0jHSt3fywfq3VKn977Hg0wUuTkEmwXlFYwuW26+6+3xorf4nD3XvA==, tarball: https://registry.npmjs.org/vitepress/-/vitepress-1.0.0-rc.44.tgz}
     id: registry.npmjs.org/vitepress/1.0.0-rc.44
     name: vitepress
@@ -13138,7 +13160,7 @@ packages:
       minisearch: registry.npmjs.org/minisearch@6.3.0
       postcss: registry.npmjs.org/postcss@8.4.38
       shiki: registry.npmjs.org/shiki@1.6.0
-      vite: registry.npmjs.org/vite@5.2.11(@types/node@20.12.12)
+      vite: registry.npmjs.org/vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)
       vue: registry.npmjs.org/vue@3.4.27(typescript@5.2.2)
     transitivePeerDependencies:
       - '@algolia/client-search'
@@ -13168,7 +13190,7 @@ packages:
       - universal-cookie
     dev: true
 
-  registry.npmjs.org/vitest@1.6.0(@types/node@20.12.12)(jsdom@24.0.0):
+  registry.npmjs.org/vitest@1.6.0(@types/node@20.12.12)(jsdom@24.0.0)(sass@1.77.2):
     resolution: {integrity: sha512-H5r/dN06swuFnzNFhq/dnz37bPXnq8xB2xB5JOVk8K09rUtoeNN+LHWkoQ0A/i3hvbUKKcCei9KpbxqHMLhLLA==, tarball: https://registry.npmjs.org/vitest/-/vitest-1.6.0.tgz}
     id: registry.npmjs.org/vitest/1.6.0
     name: vitest
@@ -13215,8 +13237,8 @@ packages:
       strip-literal: registry.npmjs.org/strip-literal@2.1.0
       tinybench: registry.npmjs.org/tinybench@2.8.0
       tinypool: registry.npmjs.org/tinypool@0.8.4
-      vite: registry.npmjs.org/vite@5.2.11(@types/node@20.12.12)
-      vite-node: registry.npmjs.org/vite-node@1.6.0(@types/node@20.12.12)
+      vite: registry.npmjs.org/vite@5.2.11(@types/node@20.12.12)(sass@1.77.2)
+      vite-node: registry.npmjs.org/vite-node@1.6.0(@types/node@20.12.12)(sass@1.77.2)
       why-is-node-running: registry.npmjs.org/why-is-node-running@2.2.2
     transitivePeerDependencies:
       - less

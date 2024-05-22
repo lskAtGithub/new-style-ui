@@ -1,0 +1,29 @@
+$ns-color-white: #ffffff !default;
+$ns-color-black: #000000 !default;
+
+$ns-color-primary: #409eff !default;
+$ns-color-primary-light-8: mix($ns-color-white, $ns-color-primary, 80%);
+
+$ns-color-success: #67c23a !default;
+$ns-color-success-light: mix($ns-color-white, $ns-color-success, 80%) !default;
+
+$ns-color-warning: #e6a23c !default;
+$ns-color-warning-light: mix($ns-color-white, $ns-color-warning, 80%) !default;
+
+$ns-color-danger: #f56c6c !default;
+$ns-color-danger-light: mix($ns-color-white, $ns-color-danger, 80%) !default;
+
+$ns-color-info: #909399 !default;
+$ns-color-info-light: mix($ns-color-white, $ns-color-info, 80%) !default;
+
+$ns-background-color-base: #f5f7fa !default;
+
+$ns-border-color: #cccccc !default;
+$ns-shadow-color: #9a9a9a;
+$ns-text-color: #606266;
+//  size
+
+$ns-button-height-base: 32px !default;
+$ns-button-height-small: 24px !default;
+$ns-button-height-large: 40px !default;
+$ns-border-radius: 3px;

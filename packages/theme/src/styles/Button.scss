@@ -1,0 +1,57 @@
+@use '../common/variable.scss' as *;
+@use '../mixins/functions.scss' as *;
+@use '../mixins/mixins.scss' as *;
+
+@include b(button) {
+  $shadow-color: $ns-shadow-color;
+  $height: $ns-button-height-base;
+  $font-color: $ns-text-color;
+  $bg-color: $ns-color-white;
+
+  border: none;
+  color: $font-color;
+  border-radius: $ns-border-radius;
+  padding: 0 16px;
+  height: $height;
+  cursor: pointer;
+  background-color: $bg-color;
+  box-shadow: 0 2px 5px $shadow-color;
+  transition: all 100ms ease;
+  &:active {
+    transform: translateY(2px);
+    box-shadow: 0 1px 1px $shadow-color;
+  }
+
+  @include m(primary) {
+    $font-color: $ns-color-white;
+    $bg-color: $ns-color-primary;
+
+    color: $font-color;
+    background-color: $bg-color;
+    background-color: $bg-color;
+  }
+  @include m(success) {
+    $font-color: $ns-color-white;
+    $bg-color: $ns-color-success;
+
+    color: $font-color;
+    background-color: $bg-color;
+    background-color: $bg-color;
+  }
+  @include m(warning) {
+    $font-color: $ns-color-white;
+    $bg-color: $ns-color-warning;
+
+    color: $font-color;
+    background-color: $bg-color;
+    background-color: $bg-color;
+  }
+  @include m(danger) {
+    $font-color: $ns-color-white;
+    $bg-color: $ns-color-danger;
+
+    color: $font-color;
+    background-color: $bg-color;
+    background-color: $bg-color;
+  }
+}

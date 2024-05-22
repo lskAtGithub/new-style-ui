@@ -1,0 +1,10 @@
+@use '../common/variable.scss' as *;
+
+$--color-white-f: #ffffff !default;
+/*
+ * shadows achieve thin edges
+ */
+@mixin border($color) {
+  box-shadow: 0px 0px 0px 0.5px $color;
+  border: none;
+}
