@@ -5,29 +5,18 @@ import type { ButtonProps } from './types'
 defineOptions({
   name: 'NsButton'
 })
-const props = withDefaults(defineProps<ButtonProps>(), {
-  tag: 'button',
-  nativeType: 'button'
-})
 
-const slots = defineSlots()
+withDefaults(defineProps<ButtonProps>(), {})
 
-const _ref = ref<HTMLButtonElement>()
+const buttonRef = ref<HTMLButtonElement>()
 </script>
 
 <template>
-  <component
-    ref="_ref"
+  <button
+    ref="buttonRef"
     class="ns-button"
-    :is="props.tag"
-    :type="tag === 'button' ? props.nativeType : void 0"
-    :disabled="props.disabled"
-    :class="['ns-button', props.size]"
+    :class="type ? `ns-button--${type}` : ''"
   >
     <slot></slot>
-  </component>
+  </button>
 </template>
-
-<style scoped>
-@import './style.css';
-</style>

@@ -1,6 +1,6 @@
 import { makeInstall } from "@new-style-ui/utils"
 import components from "./components"
-import '@new-style-ui/theme/index.css'
+import '@new-style-ui/theme/dist/index.css'
 
 const installer = makeInstall(components)
 
