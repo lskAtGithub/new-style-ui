@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "pnpm --filter @new-style-ui/play dev",
+    "story": "pnpm --filter @new-style-ui/play storybook",
     "docs:dev": "pnpm --filter @new-style-ui/docs dev",
     "docs:build": "pnpm --filter @new-style-ui/docs build",
     "docs:preview": "pnpm --filter @new-style-ui/docs preview",
