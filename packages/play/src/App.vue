@@ -1,11 +1,15 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-const a = ref('www')
+import { NsButton } from 'new-style-ui';
+
 </script>
 
 <template>
-  <div class="container" :class="{ a: a }">
-    <ns-button type="primary">click me</ns-button>
+  <div class="container">
+    <ns-button size="small">base button</ns-button>
+    <ns-button size="large" type="primary">primary button</ns-button>
+    <ns-button type="success">success button</ns-button>
+    <ns-button type="warning">warning button</ns-button>
+    <ns-button type="danger">danger button</ns-button>
   </div>
 </template>
 
