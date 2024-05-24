@@ -14,9 +14,21 @@
 
 @mixin sizeForButton($size-font, $size-height, $size-gap) {
   height: $size-height;
+  line-height: $size-height;
   padding-left: $size-gap;
   padding-right: $size-gap;
   font-size: $size-font;
+}
+
+@mixin loadingStatus($color, $bgColor) {
+  color: $color;
+  background-color: $bgColor;
+  box-shadow: 0 2px 5px $bgColor;
+
+  &:active {
+    transform: none;
+    box-shadow: 0 2px 5px $bgColor;
+  }
 }
 
 @include b(button) {
@@ -25,6 +37,7 @@
   margin-right: 6px;
   border-radius: $ns-border-radius;
   cursor: pointer;
+  user-select: none;
   transition: all 100ms ease;
   @include sizeForButton(
     $ns-size-font-base,
@@ -32,36 +45,7 @@
     $ns-size-gap-base
   );
   @include typeForButton($ns-text-color, $ns-color-white, $ns-shadow-color);
-
-  @include m(primary) {
-    @include typeForButton(
-      $ns-color-white,
-      $ns-color-primary,
-      $ns-color-primary-dark
-    );
-  }
-  @include m(success) {
-    @include typeForButton(
-      $ns-color-white,
-      $ns-color-success,
-      $ns-color-success-dark
-    );
-  }
-  @include m(warning) {
-    @include typeForButton(
-      $ns-color-white,
-      $ns-color-warning,
-      $ns-color-warning-dark
-    );
-  }
-  @include m(danger) {
-    @include typeForButton(
-      $ns-color-white,
-      $ns-color-danger,
-      $ns-color-danger-dark
-    );
-  }
-
+  // size
   @include m(default) {
     @include sizeForButton(
       $ns-size-font-base,
@@ -82,5 +66,87 @@
       $ns-size-height-small,
       $ns-size-gap-small
     );
+  }
+
+  @include when(disabled) {
+    cursor: not-allowed;
+    @include loadingStatus($ns-text-color-light, $ns-color-white);
+  }
+  @include when(loading) {
+    @include loadingStatus($ns-text-color-light, $ns-color-white);
+  }
+}
+
+@include b(button) {
+  // type
+  @include m(info) {
+    @include typeForButton(
+      $ns-color-white,
+      $ns-color-info,
+      $ns-color-info-dark
+    );
+    @include when(disabled) {
+      cursor: not-allowed;
+      @include loadingStatus($ns-color-white, $ns-color-info-light);
+    }
+    @include when(loading) {
+      @include loadingStatus($ns-color-white, $ns-color-info-light);
+    }
+  }
+  @include m(primary) {
+    @include typeForButton(
+      $ns-color-white,
+      $ns-color-primary,
+      $ns-color-primary-dark
+    );
+    @include when(disabled) {
+      cursor: not-allowed;
+      @include loadingStatus($ns-color-white, $ns-color-primary-light);
+    }
+    @include when(loading) {
+      @include loadingStatus($ns-color-white, $ns-color-primary-light);
+    }
+  }
+  @include m(success) {
+    @include typeForButton(
+      $ns-color-white,
+      $ns-color-success,
+      $ns-color-success-dark
+    );
+    @include when(disabled) {
+      cursor: not-allowed;
+      @include loadingStatus($ns-color-white, $ns-color-success-light);
+    }
+    @include when(loading) {
+      @include loadingStatus($ns-color-white, $ns-color-success-light);
+    }
+  }
+  @include m(warning) {
+    @include typeForButton(
+      $ns-color-white,
+      $ns-color-warning,
+      $ns-color-warning-dark
+    );
+    @include when(disabled) {
+      cursor: not-allowed;
+      @include loadingStatus($ns-color-white, $ns-color-warning-light);
+    }
+    @include when(loading) {
+      @include loadingStatus($ns-color-white, $ns-color-warning-light);
+    }
+  }
+  @include m(danger) {
+    @include typeForButton(
+      $ns-color-white,
+      $ns-color-danger,
+      $ns-color-danger-dark
+    );
+    @include when(disabled) {
+      cursor: not-allowed;
+      @include loadingStatus($ns-color-white, $ns-color-danger-light);
+    }
+    @include when(loading) {
+      @include loadingStatus($ns-color-white, $ns-color-danger-light);
+    }
   }
 }
