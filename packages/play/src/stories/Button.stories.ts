@@ -1,6 +1,5 @@
-import { fn } from '@storybook/test'
-
 import type { Meta, StoryObj, ArgTypes } from '@storybook/vue3'
+// @ts-ignore
 import { NsButton } from 'new-style-ui'
 import 'new-style-ui/dist/index.css'
 
@@ -23,13 +22,12 @@ const meta: Meta<typeof NsButton> = {
     },
     loading: {
       control: 'boolean'
+    },
+    icon: {
+      control: 'text'
     }
   }
 }
-
-const container = (val: string) => `
-  <div style="margin: 6px;">${val}</div>
-`
 
 export const Default: Story & { args: { content: string } } = {
   argTypes: {
@@ -41,7 +39,7 @@ export const Default: Story & { args: { content: string } } = {
     type: 'primary',
     content: 'Button'
   },
-  render: (args) => ({
+  render: (args: any) => ({
     components: { NsButton },
     setup() {
       return { args }
