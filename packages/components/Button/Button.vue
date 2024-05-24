@@ -9,13 +9,18 @@ defineOptions({
 withDefaults(defineProps<ButtonProps>(), {})
 
 const buttonRef = ref<HTMLButtonElement>()
+
+defineExpose()
 </script>
 
 <template>
   <button
     ref="buttonRef"
     class="ns-button"
-    :class="type ? `ns-button--${type}` : ''"
+    :class="[
+      type ? `ns-button--${type}` : '',
+      size ? `ns-button--${size}` : ''
+    ]"
   >
     <slot></slot>
   </button>

@@ -2,56 +2,85 @@
 @use '../mixins/functions.scss' as *;
 @use '../mixins/mixins.scss' as *;
 
-@include b(button) {
-  $shadow-color: $ns-shadow-color;
-  $height: $ns-button-height-base;
-  $font-color: $ns-text-color;
-  $bg-color: $ns-color-white;
-
-  border: none;
+@mixin typeForButton($font-color, $bg-color, $shadow-color) {
   color: $font-color;
-  border-radius: $ns-border-radius;
-  padding: 0 16px;
-  height: $height;
-  cursor: pointer;
   background-color: $bg-color;
   box-shadow: 0 2px 5px $shadow-color;
-  transition: all 100ms ease;
   &:active {
     transform: translateY(2px);
     box-shadow: 0 1px 1px $shadow-color;
   }
+}
+
+@mixin sizeForButton($size-font, $size-height, $size-gap) {
+  height: $size-height;
+  padding-left: $size-gap;
+  padding-right: $size-gap;
+  font-size: $size-font;
+}
+
+@include b(button) {
+  border: none;
+  margin-left: 6px;
+  margin-right: 6px;
+  border-radius: $ns-border-radius;
+  cursor: pointer;
+  transition: all 100ms ease;
+  @include sizeForButton(
+    $ns-size-font-base,
+    $ns-size-height-base,
+    $ns-size-gap-base
+  );
+  @include typeForButton($ns-text-color, $ns-color-white, $ns-shadow-color);
 
   @include m(primary) {
-    $font-color: $ns-color-white;
-    $bg-color: $ns-color-primary;
-
-    color: $font-color;
-    background-color: $bg-color;
-    background-color: $bg-color;
+    @include typeForButton(
+      $ns-color-white,
+      $ns-color-primary,
+      $ns-color-primary-dark
+    );
   }
   @include m(success) {
-    $font-color: $ns-color-white;
-    $bg-color: $ns-color-success;
-
-    color: $font-color;
-    background-color: $bg-color;
-    background-color: $bg-color;
+    @include typeForButton(
+      $ns-color-white,
+      $ns-color-success,
+      $ns-color-success-dark
+    );
   }
   @include m(warning) {
-    $font-color: $ns-color-white;
-    $bg-color: $ns-color-warning;
-
-    color: $font-color;
-    background-color: $bg-color;
-    background-color: $bg-color;
+    @include typeForButton(
+      $ns-color-white,
+      $ns-color-warning,
+      $ns-color-warning-dark
+    );
   }
   @include m(danger) {
-    $font-color: $ns-color-white;
-    $bg-color: $ns-color-danger;
+    @include typeForButton(
+      $ns-color-white,
+      $ns-color-danger,
+      $ns-color-danger-dark
+    );
+  }
 
-    color: $font-color;
-    background-color: $bg-color;
-    background-color: $bg-color;
+  @include m(default) {
+    @include sizeForButton(
+      $ns-size-font-base,
+      $ns-size-height-base,
+      $ns-size-gap-base
+    );
+  }
+  @include m(large) {
+    @include sizeForButton(
+      $ns-size-font-large,
+      $ns-size-height-large,
+      $ns-size-gap-large
+    );
+  }
+  @include m(small) {
+    @include sizeForButton(
+      $ns-size-font-small,
+      $ns-size-height-small,
+      $ns-size-gap-small
+    );
   }
 }
