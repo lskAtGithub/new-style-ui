@@ -3,13 +3,10 @@
 @use '../mixins/mixins.scss' as *;
 
 @include b(icon) {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
   fill: currentColor;
   color: inherit;
   font-size: inherit;
+  margin-right: 5px;
 
   @include m(primary) {
     color: $ns-color-primary;
