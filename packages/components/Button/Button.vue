@@ -24,15 +24,15 @@ defineExpose()
     :class="[
       type ? `ns-button--${type}` : '',
       size ? `ns-button--${size}` : '',
-      loading? `is-loading` : '',
-      disabled? `is-disabled` : ''
+      loading ? `is-loading` : '',
+      disabled ? `is-disabled` : ''
     ]"
   >
     <template v-if="loading">
-      <ns-icon class="ns-button-prefix" icon="spinner" size="1x" spin />
+      <ns-icon icon="spinner" size="1x" spin />
     </template>
     <template v-if="icon && !loading">
-      <ns-icon class="ns-button-prefix" :icon="icon" size="1x" />
+      <ns-icon :icon="icon" size="1x" />
     </template>
     <slot></slot>
   </button>
