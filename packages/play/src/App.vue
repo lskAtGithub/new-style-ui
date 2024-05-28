@@ -1,18 +1,21 @@
 <script setup lang="ts">
+import { ref } from 'vue'
+// @ts-ignore
 import { NsButton } from 'new-style-ui'
 
-const handleClick = () => {
-  console.log(1111)
+let xxx = ref('')
+let inputRef = ref()
+
+const onGetValue = () => {
+  console.log(inputRef.value)
 }
+const placeholder = 'input this'
 </script>
 
 <template>
   <div class="container">
-    <ns-button @click="handleClick" :disabled="false">base button</ns-button>
-    <ns-button @click="handleClick" :disabled="true" type="primary">primary button</ns-button>
-    <ns-button @click="handleClick" :disabled="true" type="success">success button</ns-button>
-    <ns-button @click="handleClick" :disabled="true" type="warning">warning button</ns-button>
-    <ns-button @click="handleClick" :disabled="true" type="danger">danger button</ns-button>
+    <ns-input v-model="xxx" :prefixIcon="{ icon: 'search' }" :suffixIcon="{ icon: 'search' }" :placeholder="placeholder" ref="inputRef"></ns-input>
+    <ns-button @click="onGetValue">click get input ref</ns-button>
   </div>
 </template>
 
