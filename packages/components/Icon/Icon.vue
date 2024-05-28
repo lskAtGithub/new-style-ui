@@ -3,7 +3,7 @@ import { computed } from 'vue'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { omit } from 'lodash-es'
 
-import type { IconProps } from './type'
+import type { IconProps } from './types'
 
 defineOptions({
   name: 'NsIcon',
@@ -15,6 +15,8 @@ const filterProps = computed(() => omit(props, ['type', 'color']))
 const customStyles = computed(() => ({
   color: props.color ? props.color : void 0
 }))
+
+defineExpose()
 </script>
 
 <template>
