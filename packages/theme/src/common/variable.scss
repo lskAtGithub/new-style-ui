@@ -1,32 +1,33 @@
-$ns-color-white: #ffffff !default;
-$ns-color-black: #000000 !default;
+$ns-color-white: #ffffff;
+$ns-color-black: #000000;
 
 $ns-color-primary: #409eff !default;
 $ns-color-primary-light: mix($ns-color-white, $ns-color-primary, 20%);
 $ns-color-primary-dark: darken($ns-color-primary, 10%);
 
 $ns-color-success: #67c23a !default;
-$ns-color-success-light: mix($ns-color-white, $ns-color-success, 20%) !default;
+$ns-color-success-light: mix($ns-color-white, $ns-color-success, 20%);
 $ns-color-success-dark: darken($ns-color-success, 10%);
 
 $ns-color-warning: #e6a23c !default;
-$ns-color-warning-light: mix($ns-color-white, $ns-color-warning, 20%) !default;
+$ns-color-warning-light: mix($ns-color-white, $ns-color-warning, 20%);
 $ns-color-warning-dark: darken($ns-color-warning, 10%);
 
 $ns-color-danger: #f56c6c !default;
-$ns-color-danger-light: mix($ns-color-white, $ns-color-danger, 20%) !default;
+$ns-color-danger-light: mix($ns-color-white, $ns-color-danger, 20%);
 $ns-color-danger-dark: darken($ns-color-danger, 10%);
 
 $ns-color-info: #909399 !default;
-$ns-color-info-light: mix($ns-color-white, $ns-color-info, 20%) !default;
+$ns-color-info-light: mix($ns-color-white, $ns-color-info, 20%);
 $ns-color-info-dark: darken($ns-color-info, 10%);
 
 $ns-background-color-base: #f5f7fa !default;
 
 $ns-border-color: #cccccc !default;
-$ns-shadow-color: #9a9a9a;
-$ns-text-color: #606266;
-$ns-text-color-light: #a8abb2;
+$ns-shadow-color: #9a9a9a !default;
+$ns-shadow-color-light: mix($ns-color-white, $ns-color-info, 50%);
+$ns-text-color: #606266 !default;
+$ns-text-color-light: #a8abb2 !default;
 
 //  size
 $ns-size-height-base: 32px !default;
@@ -39,4 +40,4 @@ $ns-size-gap-base: 14px !default;
 $ns-size-gap-small: 12px !default;
 $ns-size-gap-large: 16px !default;
 
-$ns-border-radius: 3px;
+$ns-border-radius: 3px !default;
