@@ -15,12 +15,12 @@ const props = withDefaults(defineProps<InputProps>(), {
   rows: '2'
 })
 const emits = defineEmits<InputEmits>()
-const model = defineModel()
+const model = defineModel<string | number | null>()
 
 let isFocus = ref(false)
 const inputRef = ref<HTMLInputElement>()
 const textareaRef = ref<HTMLTextAreaElement>()
-let passwordIconName = ref<'eye' | 'eyeslash'>('eye')
+let passwordIconName = ref<'eye' | 'eye-slash'>('eye')
 let passwordType = ref<'password' | 'text'>('password')
 let isComposing = ref(false)
 
@@ -70,8 +70,16 @@ const handleInput = (e: Event) => {
   }
 }
 const handleChange = (e: Event) => emits('change', e)
-const handleKeydown = (e: Event) => emits('keydown', e)
-const handleKeyup = (e: Event) => emits('keyup', e)
+const handleKeydown = (e: Event) => {
+  if (!isComposing.value) {
+    emits('keydown', e)
+  }
+}
+const handleKeyup = (e: Event) => {
+  if (!isComposing.value) {
+    emits('keyup', e)
+  }
+}
 const handleClear = () => {
   model.value = ''
   emits('clear')
@@ -83,10 +91,12 @@ const handleCompositionstart = () => {
 const handleCompositionend = (e: Event) => {
   isComposing.value = false
   handleInput(e)
+  handleKeydown(e)
+  handleKeyup(e)
 }
 const handleChangePassWordStatus = () => {
   if (passwordIconName.value === 'eye' && passwordType.value === 'password') {
-    passwordIconName.value = 'eyeslash'
+    passwordIconName.value = 'eye-slash'
     passwordType.value = 'text'
   } else {
     passwordIconName.value = 'eye'
