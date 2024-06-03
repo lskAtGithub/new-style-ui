@@ -24,8 +24,9 @@ const handleInput = () => {
       <ns-input
         ref="inputRef"
         type="text"
+        :prefix-icon="{ icon: 'search' }"
         :suffix-icon="{ icon: 'search' }"
-        :clearable="true"
+        clearable
         v-model="xxx"
         @input="handleInput"
       />

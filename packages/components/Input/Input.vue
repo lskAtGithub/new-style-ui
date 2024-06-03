@@ -40,6 +40,12 @@ const textAttrs = computed(() => {
 const showClearable = computed(
   () => props.clearable && !['', null, undefined].includes(model.value as never)
 )
+const showSuffixIcon = computed(
+  () =>
+    props.suffixIcon &&
+    !['password'].includes(props.type) &&
+    ['', null, undefined].includes(model.value as never)
+)
 
 const textareaAttrs = computed(() => {
   const {
@@ -170,8 +176,8 @@ defineExpose({ clear: handleClear, input: inputRef, textarea: textareaRef })
     <template v-if="showClearable">
       <ns-icon class="ns-close-icon" icon="close" @click="handleClear" />
     </template>
-    <template v-if="suffixIcon && ['password'].includes(type)">
-      <ns-icon v-bind="suffixIcon" />
+    <template v-if="showSuffixIcon">
+      <ns-icon v-bind="suffixIcon!" />
     </template>
     <template v-if="type === 'password'">
       <ns-icon
