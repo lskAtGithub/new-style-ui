@@ -1,6 +1,5 @@
-import { NsButton, NsIcon } from '@new-style-ui/components'
-import type { Plugin } from 'vue'
+import { NsButton, NsIcon, NsInput } from '@new-style-ui/components'
 
-const UI = [NsButton, NsIcon] as Plugin[]
+const UI = [NsButton, NsIcon, NsInput]
 
 export default UI

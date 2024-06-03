@@ -1,0 +1,83 @@
+@use '../common/variable.scss' as *;
+@use '../mixins/functions.scss' as *;
+@use '../mixins/mixins.scss' as *;
+
+@mixin sizeForInput($size-font, $size-height) {
+  height: $size-height;
+  line-height: $size-height;
+  @include b(input) {
+    font-size: $size-font;
+  }
+  @include b(icon) {
+    font-size: calc($size-font - 2px);
+  }
+}
+
+@include b(input-container) {
+  @include sizeForInput($ns-size-font-base, $ns-size-height-base);
+
+  width: fit-content;
+  font-size: 0;
+  color: $ns-text-color;
+  border-radius: $ns-border-radius;
+  box-shadow: 0 0 5px $ns-shadow-color;
+  padding: 0 12px;
+
+  @include m(focused) {
+    box-shadow:
+      inset 2px 2px 5px $ns-shadow-color-light,
+      inset -1px -1px 5px $ns-shadow-color;
+  }
+
+  @include b(input) {
+    border: none;
+    outline: none;
+    padding: 8px 4px;
+    border-radius: inherit;
+    color: inherit;
+    caret-color: $ns-text-color-light;
+    background-color: transparent;
+    height: 100%;
+
+    &::placeholder {
+      color: $ns-text-color-light;
+    }
+  }
+  @include b(close-icon) {
+    cursor: pointer;
+    font-size: inherit;
+  }
+}
+
+@include b(input-container) {
+  @include m(large) {
+    @include sizeForInput($ns-size-font-large, $ns-size-height-large);
+  }
+  @include m(small) {
+    @include sizeForInput($ns-size-font-small, $ns-size-height-small);
+  }
+}
+
+@include b(textarea) {
+  border: none;
+  outline: none;
+  width: fit-content;
+  padding: 12px 8px;
+  color: $ns-text-color;
+  border-radius: $ns-border-radius;
+  box-shadow: 0 0 5px $ns-shadow-color;
+  border-radius: inherit;
+  caret-color: $ns-text-color-light;
+  background-color: transparent;
+  height: 100%;
+
+  &::placeholder {
+    color: $ns-text-color-light;
+  }
+
+  &:focus {
+    box-shadow:
+      inset 2px 2px 5px $ns-shadow-color-light,
+      inset -1px -1px 5px $ns-shadow-color;
+  }
+}
