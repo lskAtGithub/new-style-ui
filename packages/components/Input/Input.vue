@@ -167,7 +167,7 @@ defineExpose({ clear: handleClear, input: inputRef, textarea: textareaRef })
         @compositionend="handleCompositionend"
       />
     </template>
-    <template v-show="showClearable">
+    <template v-if="showClearable">
       <ns-icon class="ns-close-icon" icon="close" @click="handleClear" />
     </template>
     <template v-if="suffixIcon && ['password'].includes(type)">

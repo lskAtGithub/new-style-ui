@@ -15,8 +15,9 @@
 
 @include b(input-container) {
   @include sizeForInput($ns-size-font-base, $ns-size-height-base);
-
-  width: fit-content;
+  display: flex;
+  align-items: center;
+  width: $ns-width;
   font-size: 0;
   color: $ns-text-color;
   border-radius: $ns-border-radius;
@@ -30,14 +31,16 @@
   }
 
   @include b(input) {
+    width: $ns-input-width;
+    height: 100%;
+    margin: auto;
     border: none;
     outline: none;
-    padding: 8px 4px;
+    padding: 9px 4px 8px;
     border-radius: inherit;
     color: inherit;
     caret-color: $ns-text-color-light;
     background-color: transparent;
-    height: 100%;
 
     &::placeholder {
       color: $ns-text-color-light;
@@ -45,6 +48,7 @@
   }
   @include b(close-icon) {
     cursor: pointer;
+    margin-left: 5px;
   }
 }
 
@@ -60,7 +64,7 @@
 @include b(textarea) {
   border: none;
   outline: none;
-  width: fit-content;
+  width: $ns-width;
   padding: 12px 8px;
   color: $ns-text-color;
   border-radius: $ns-border-radius;

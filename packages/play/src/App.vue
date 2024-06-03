@@ -1,27 +1,33 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import { NsInput } from 'new-style-ui'
 
 let xxx = ref('')
 let inputRef = ref()
+let isComposing = ref(false)
 
 const onGetValue = () => {
   console.log(inputRef.value)
 }
 const handleInput = () => {
-  console.log(xxx.value)
+  if (!isComposing.value) {
+    console.log('run')
+  }
 }
+
 </script>
 
 <template>
   <div class="container">
-    <p>{{ xxx }}</p>
     <p>
+      <ns-icon icon="eye-slash"></ns-icon>
       <ns-input
         ref="inputRef"
         type="text"
-        :prefix-icon="{ icon: 'eye' }"
+        :suffix-icon="{ icon: 'search' }"
+        :clearable="true"
         v-model="xxx"
-        @keydown="handleInput"
+        @input="handleInput"
       />
     </p>
     <ns-button @click="onGetValue">click get input ref</ns-button>
