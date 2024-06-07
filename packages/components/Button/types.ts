@@ -1,11 +1,11 @@
 import type Button from './Button.vue'
+import type { Size } from '../Types'
 
 type ButtonType = 'primary' | 'success' | 'warning' | 'danger' | 'info'
-type ButtonSize = 'large' | 'default' | 'small'
 
 interface ButtonProps {
   type?: ButtonType
-  size?: ButtonSize
+  size?: Size
   disabled?: boolean
   loading?: boolean
   icon?: string
@@ -15,4 +15,4 @@ interface ButtonProps {
 }
 
 export type ButtonInstance = InstanceType<typeof Button>
-export type { ButtonType, ButtonSize, ButtonProps }
+export type { ButtonType, ButtonProps }

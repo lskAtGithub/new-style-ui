@@ -1,4 +1,5 @@
 import type { IconProps } from '../Icon/types'
+import type { Size }  from '../Types'
 
 interface InputProps {
   type: string
@@ -21,6 +22,7 @@ interface InputProps {
   max?: string
   min?: string
   form?: string
+  size?: Size
 }
 
 interface InputEmits {
