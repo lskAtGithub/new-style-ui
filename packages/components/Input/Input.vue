@@ -12,7 +12,8 @@ defineOptions({
 
 const props = withDefaults(defineProps<InputProps>(), {
   type: 'text',
-  rows: '2'
+  rows: '2',
+  size: 'default'
 })
 const emits = defineEmits<InputEmits>()
 const model = defineModel<string | number | null>()
