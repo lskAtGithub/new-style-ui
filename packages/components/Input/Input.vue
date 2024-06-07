@@ -34,6 +34,7 @@ const textAttrs = computed(() => {
     showPassword,
     clearable,
     resize,
+    size,
     ...filterAttrs
   } = props
   return filterAttrs
@@ -56,6 +57,7 @@ const textareaAttrs = computed(() => {
     showPassword,
     clearable,
     autocomplete,
+    size,
     max,
     min,
     ...filterAttrs
