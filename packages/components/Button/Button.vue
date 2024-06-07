@@ -13,7 +13,7 @@ withDefaults(defineProps<ButtonProps>(), {
 
 const buttonRef = ref<HTMLButtonElement>()
 
-defineExpose()
+defineExpose({ buttonRef })
 </script>
 
 <template>
