@@ -1,0 +1,9 @@
+@use '../common/variable.scss' as *;
+@use '../mixins/functions.scss' as *;
+@use '../mixins/mixins.scss' as *;
+
+@include b(radio) {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}

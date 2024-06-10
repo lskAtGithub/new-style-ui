@@ -1,37 +1,31 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+// @ts-ignore
 import { NsInput } from 'new-style-ui'
+import { NsRadio, NsRadioGroup } from '../../components/Radio/index'
 
-let xxx = ref('')
 let inputRef = ref()
-let isComposing = ref(false)
+let radioValue = ref('1')
 
-const onGetValue = () => {
-  console.log(inputRef.value)
+const handleClick = () => {
+  console.log(radioValue.value)
 }
-const handleInput = () => {
-  if (!isComposing.value) {
-    console.log('run')
-  }
-}
-
 </script>
 
 <template>
   <div class="container">
     <p>
-      <ns-icon icon="eye-slash"></ns-icon>
-      <ns-input
-        ref="inputRef"
-        type="text"
-        :prefix-icon="{ icon: 'search' }"
-        :suffix-icon="{ icon: 'search' }"
-        clearable
-        v-model="xxx"
-        @input="handleInput"
-      />
+      <ns-radio-group v-model="radioValue">
+        <ns-radio label="label1" name="1" value="1" />
+        <ns-radio label="label2" name="1" value="2" />
+        <ns-radio label="label3" name="1" value="3" />
+        <ns-radio name="1" value="4">
+          <ns-icon icon="eye" />
+          label4
+        </ns-radio>
+      </ns-radio-group>
     </p>
-    <ns-button @click="onGetValue">click get input ref</ns-button>
+    <ns-button @click="handleClick">Clike me</ns-button>
   </div>
 </template>
 
