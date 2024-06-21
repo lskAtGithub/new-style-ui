@@ -13,19 +13,23 @@ const props = withDefaults(defineProps<RadioProps>(), {
   modelValue: undefined
 })
 const emits = defineEmits<RadioEmits>()
-const { radioRef, isChecked, actualValue, modelValue } = useRadio(props, emits)
+const { radioRef, isChecked, actualValue, actualName, actualModelValue } =
+  useRadio(props, emits)
 
 defineExpose({ radioRef })
 </script>
 
 <template>
-  <label class="ns-radio" :class="[isChecked ? 'ns-active--active' : '']">
+  <label
+    class="ns-radio"
+    :class="[isChecked ? 'ns-active--active' : '', `ns-radio-${size}`]"
+  >
     <input
       ref="radioRef"
       type="radio"
       :value="actualValue"
-      v-model="modelValue"
-      :name="name"
+      v-model="actualModelValue"
+      :name="actualName"
       @click.stop
     />
     <span @keydown.stop>

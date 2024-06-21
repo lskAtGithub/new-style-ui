@@ -7,29 +7,41 @@ import type { ExtractPropTypes } from 'vue'
 const useRadio = (props: ExtractPropTypes<RadioProps>, emits: RadioEmits) => {
   const radioRef = ref<HTMLInputElement>()
   const radioGroup = inject(provideKey, undefined)
+
   const isGroup = computed(() => !!radioGroup)
+  const actualName = computed(() => {
+    if (isGroup.value) return radioGroup!.name
+    return props.name
+  })
   const actualValue = computed(() => {
     if (props.value) return props.value
     return props.label
   })
   const isChecked = computed(() => {
-    return actualValue.value === props.modelValue
+    return actualValue.value === actualModelValue.value
   })
-  const modelValue = computed({
+  const actualModelValue = computed({
     get() {
       return isGroup.value ? radioGroup!.modelValue : props.modelValue!
     },
     set(val: string | number | boolean) {
       if (isGroup) {
-        console.log(radioGroup!.emits('update:modelValue', val))
+        radioGroup!.emits('update:modelValue', val)
+        radioGroup!.emits('change', val)
       } else {
         emits('update:modelValue', val)
       }
-      radioRef.value!.checked = props.modelValue === actualValue.value
     }
   })
 
-  return { radioRef, actualValue, isChecked, modelValue, isGroup }
+  return {
+    radioRef,
+    actualValue,
+    isChecked,
+    actualModelValue,
+    isGroup,
+    actualName
+  }
 }
 
 export { useRadio }

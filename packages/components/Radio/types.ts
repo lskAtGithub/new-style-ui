@@ -10,7 +10,7 @@ interface RadioGroupProps {
   value?: string | number | boolean
 }
 interface RadioGroupEmits {
-  (e: 'update: modelValue'): void
+  (e: 'update:modelValue'): void
   (e: 'change', modelValue: string | number | boolean | undefined): void
 }
 

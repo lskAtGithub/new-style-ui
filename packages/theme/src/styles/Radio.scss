@@ -2,8 +2,22 @@
 @use '../mixins/functions.scss' as *;
 @use '../mixins/mixins.scss' as *;
 
+@mixin sizeForRadio($size) {
+  width: $size;
+  height: $size;
+  font-size: $size;
+}
+
 @include b(radio) {
   display: flex;
   align-items: center;
   gap: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 3px solid transparent;
+  box-shadow:
+    3px 3px 6px $ns-shadow-color,
+    -1px -1px 4px $ns-shadow-color-light;
+
+  @include sizeForRadio($ns-size-font-base);
 }

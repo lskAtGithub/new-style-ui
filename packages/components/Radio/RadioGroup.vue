@@ -10,6 +10,7 @@ defineOptions({
 
 const props = defineProps<RadioGroupProps>()
 const emits = defineEmits<RadioGroupEmits>()
+
 provide(provideKey, { ...props, emits })
 </script>
 

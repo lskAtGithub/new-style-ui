@@ -4,28 +4,36 @@ import { ref } from 'vue'
 import { NsInput } from 'new-style-ui'
 import { NsRadio, NsRadioGroup } from '../../components/Radio/index'
 
-let inputRef = ref()
-let radioValue = ref('1')
+let compRef = ref()
+let radioValue = ref('3')
 
 const handleClick = () => {
-  console.log(radioValue.value)
 }
+const handleChange = (e: any) => {}
 </script>
 
 <template>
   <div class="container">
     <p>
-      <ns-radio-group v-model="radioValue">
-        <ns-radio label="label1" name="1" value="1" />
-        <ns-radio label="label2" name="1" value="2" />
-        <ns-radio label="label3" name="1" value="3" />
-        <ns-radio name="1" value="4">
+      <ns-radio-group
+        v-model="radioValue"
+        name="www"
+        ref="compRef"
+        @change="handleChange"
+      >
+        <ns-radio label="label1" value="1" />
+        <ns-radio label="label2" value="2" />
+        <ns-radio label="label3" value="3" />
+        <ns-radio value="4">
           <ns-icon icon="eye" />
           label4
         </ns-radio>
       </ns-radio-group>
     </p>
-    <ns-button @click="handleClick">Clike me</ns-button>
+    <p>
+      <ns-radio v-model="radioValue" label="label3" value="3" />
+    </p>
+    <!-- <ns-button type="primary" @click="handleClick">Click me</ns-button> -->
   </div>
 </template>
 
