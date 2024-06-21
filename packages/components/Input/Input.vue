@@ -146,6 +146,7 @@ defineExpose({ clear: handleClear, input: inputRef, textarea: textareaRef })
       <input
         ref="inputRef"
         class="ns-input"
+        :class="[{ size: `ns-input--${size}` }]"
         v-bind="textAttrs"
         type="text"
         v-model="model"
@@ -163,6 +164,7 @@ defineExpose({ clear: handleClear, input: inputRef, textarea: textareaRef })
       <input
         ref="inputRef"
         class="ns-input"
+        :class="[{ size: `ns-input--${size}` }]"
         v-bind="textAttrs"
         v-model="model"
         :type="passwordType"
