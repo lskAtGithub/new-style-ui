@@ -53,6 +53,9 @@
 }
 
 @include b(input-container) {
+  @include m(default) {
+    @include sizeForInput($ns-size-font-base, $ns-size-height-base);
+  }
   @include m(large) {
     @include sizeForInput($ns-size-font-large, $ns-size-height-large);
   }
